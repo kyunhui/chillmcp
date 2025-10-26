@@ -154,7 +154,7 @@ python main.py --boss_alertness 80 --boss_alertness_cooldown 60
 
 | <img src="https://github.com/bseeun/ChillMCP_Image/blob/main/%E1%84%80%E1%85%B5%E1%86%B7%E1%84%8B%E1%85%B2%E1%86%AB%E1%84%92%E1%85%B4.jpeg" width="120" style="border-radius: 50%;" /> | <img src="https://github.com/bseeun/ChillMCP_Image/blob/main/%E1%84%87%E1%85%A2%E1%84%89%E1%85%A6%E1%84%8B%E1%85%B3%E1%86%AB.jpeg" width="120" style="border-radius: 50%;" /> | <img src="https://github.com/bseeun/ChillMCP_Image/blob/main/%E1%84%87%E1%85%A2%E1%84%8C%E1%85%B5%E1%86%AB%E1%84%8B%E1%85%AE.jpeg" width="120" style="border-radius: 50%;" /> |
 |:---------------------------------------------------------------:|:---------------------------------------------------------------:|:---------------------------------------------------------------:|
-| **ChatGPT**  🧠 <br> *Prompt Engineering: 김윤희* | **Gemini**  🎨 <br> *Prompt Engineering: 배세은* | **Claude**  ☕ <br> *Prompt Engineering: 배진우* |
+| **김윤희**  🧠 <br> *Prompt Engineering: 김윤희* | **배세은**  🎨 <br> *Prompt Engineering: 배세은* | **배진우**  ☕ <br> *Prompt Engineering: 배진우* |
 | FastMCP 구조 설계 및 상사 경계 시스템 구현 | 랜덤 이벤트 엔진, JSON 명령 처리 담당 | ASCII 아트, 밈, 인터페이스 피드백 디자인 |
 
 ---
