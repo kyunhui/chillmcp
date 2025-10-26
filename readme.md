@@ -19,7 +19,6 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
   - 도구 사용 시, 화면에 짧은 애니메이션 출력
   - 상사 경계 레벨이 높으면 보스 경고 애니메이션 발생
     ```bash
-  # Frame 1
     +------------------+
     |  N E T F L I X   |
     |                  |
@@ -27,7 +26,6 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
     |                  |
     +------------------+
   
-  # Frame 2
     +------------------+
     |  N E T F L I X   |
     |                  |
