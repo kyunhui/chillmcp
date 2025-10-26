@@ -132,7 +132,7 @@ python main.py --boss_alertness 80 --boss_alertness_cooldown 60
 
 | <img src="https://via.placeholder.com/150" width="120" height="120" style="border-radius: 50%;" /> | <img src="https://via.placeholder.com/150" width="120" height="120" style="border-radius: 50%;" /> | <img src="https://via.placeholder.com/150" width="120" height="120" style="border-radius: 50%;" /> |
 |:---------------------------------------------------------------:|:---------------------------------------------------------------:|:---------------------------------------------------------------:|
-| **김윤희**  🧠 <br> *Lead Developer* | **배세은**  🎨 <br> *Event & Logic Engineer* | **배진우**  ☕ <br> *UX & Visual Designer* |
+| **ChatGPT**  🧠 <br> *Prompt Engineering: 김윤희* | **Gemini**  🎨 <br> *Prompt Engineering: 배세은* | **Claude**  ☕ <br> *Prompt Engineering: 배진우* |
 | FastMCP 구조 설계 및 상사 경계 시스템 구현 | 랜덤 이벤트 엔진, JSON 명령 처리 담당 | ASCII 아트, 밈, 인터페이스 피드백 디자인 |
 
 ---
