@@ -407,9 +407,9 @@ class AgentState:
                 current_stress = self.stress_level
                 current_boss = self.boss_alert_level
 
-            if changed: # Lock 해제 후 출력
+            if changed: # Lock 해제 후 출력 (실시간 업데이트 복구)
                 console.print("[dim]...스트레스 레벨 증가...[/dim]", style="italic red")
-                display_status(current_stress, current_boss) # 실시간 상태 업데이트
+                display_status(current_stress, current_boss)
 
     # 상사 경계 자동 감소 (백그라운드 스레드)
     def _background_boss_cooldown(self) -> None:
@@ -429,9 +429,9 @@ class AgentState:
                 current_stress = self.stress_level
                 current_boss = self.boss_alert_level
 
-            if changed: # Lock 해제 후 출력
+            if changed: # Lock 해제 후 출력 (실시간 업데이트 복구)
                 console.print("[dim]...상사 경계 레벨 감소...[/dim]", style="italic yellow")
-                display_status(current_stress, current_boss) # 실시간 상태 업데이트
+                display_status(current_stress, current_boss)
 
     # 도구 실행 (핵심 로직)
     def execute_tool(self, tool_name: str) -> Dict[str, Any]:
@@ -458,7 +458,7 @@ class AgentState:
             if self.boss_alert_level == MAX_BOSS_ALERT_LEVEL:
                 delay_applied = True
 
-            # 성공/실패 판정
+            # 성공/실패 결정
             success_rate = ADVANCED_TOOL_SUCCESS_RATE if tool_level == "advanced" else BASIC_TOOL_SUCCESS_RATE
             if random.random() > success_rate:
                 tool_succeeded = False
@@ -471,7 +471,12 @@ class AgentState:
                 )
             else:
                 stress_reduction = random.randint(FAILURE_STRESS_REDUCTION_MIN, FAILURE_STRESS_REDUCTION_MAX)
+            # 스트레스 감소 전 값 임시 저장 (메시지 출력용)
+            stress_before_reduction = self.stress_level
             self.stress_level = max(0, self.stress_level - stress_reduction)
+            # 실제 감소량 계산 (음수가 되지 않도록)
+            actual_stress_reduced = stress_before_reduction - self.stress_level
+
 
             # 상사 경계 증가 판정 (확률 기반)
             if random.random() < self.boss_alertness_prob:
@@ -533,16 +538,16 @@ class AgentState:
         # 1. 애니메이션 실행
         show_tool_animation(frames, flavor_text) if not delay_applied else show_boss_animation()
 
-        # 2. stderr 메시지 출력 (애니메이션 종료 후)
+        # 2. stderr 메시지 출력 (순서 중요)
         print("\n", file=sys.stderr) # 간격 추가
-        console.print(f"[bright_cyan]{flavor_text}[/]") # Flavor Text (Rich 마크업 사용)
+        console.print(f"[bright_cyan]{flavor_text}[/]") # Flavor Text (Rich 마크업)
         if boss_alert_increased: # 경계 증가 알림 (진한 색상)
-            alert_messages = { 1: "[grey50]...헛기침...(경계+1)[/]", 2: "[orange3]...모니터 봄...(경계+1)[/]", 3: "[bold orange3]...인기척...(경계+1)[/]", 4: "[bold red]...일어남!(경계+1)[/]", 5: "[bold red blink]🚨 걸어옴!(경계MAX)[/]" }
+            alert_messages = { 1: "[grey50]...헛기침...(경계+1)[/]", 2: "[orange3]내...모니터 봄...(경계+1)[/]", 3: "[bold orange3]...인기척...(경계+1)[/]", 4: "[bold red]...일어남!(경계+1)[/]", 5: "[bold red blink]🚨 걸어옴!(경계MAX)[/]" }
             console.print(alert_messages.get(current_boss_alert, f"[red]상사 경계: {current_boss_alert}[/red]"))
-        if tool_succeeded: # 성공 알림 (구체적 내용 포함)
-             console.print(f"[bold green]✅ '{tool_name}' 성공! ({base_summary})[/bold green]")
-        else: # 실패 알림 (구체적 이유 포함)
-             console.print(f"[bold yellow]⚠️ 이런! '{tool_name}' 실패... 이유: {failure_reason_stderr}[/bold yellow]")
+        if tool_succeeded: # 성공 알림 (스트레스 감소량 포함)
+             console.print(f"[bold green]✅ '{tool_name}' 성공! ({base_summary}) (스트레스 -{actual_stress_reduced})[/bold green]")
+        else: # 실패 알림 (이유 및 스트레스 변화량 포함)
+             console.print(f"[bold yellow]⚠️ 이런! '{tool_name}' 실패... 이유: {failure_reason_stderr} (스트레스 -{actual_stress_reduced})[/bold yellow]")
         if event_message_stderr: console.print(event_message_stderr) # 돌발 이벤트
         if delay_applied: # 페널티 알림
             penalty_msg = f"\n\n[bold red]⚠️ ({BOSS_PENALTY_DELAY_SEC}초 지연 발생... 상사 감시 중...)[/bold red]"
@@ -554,8 +559,8 @@ class AgentState:
         # 3. stdout 응답 텍스트 생성
         response_text = ( f"{flavor_text}\n\nBreak Summary: {summary_text}\n"
                           f"Stress Level: {current_stress}\nBoss Alert Level: {current_boss_alert}" )
-        response_text += event_message_stdout # 돌발 이벤트 내용 추가
-        response_text += response_text_penalty_suffix # 페널티 내용 추가
+        response_text += event_message_stdout
+        response_text += response_text_penalty_suffix
 
         # 4. 최종 상태 패널 출력 (stderr)
         print("\n", file=sys.stderr) # 간격 추가
@@ -590,7 +595,7 @@ def main(args: argparse.Namespace) -> None:
                 request_data = json.loads(line)
                 tool_name = request_data.get("method")
 
-                if tool_name == "shutdown": # 종료 명령
+                if tool_name == "shutdown": # 종료 처리
                      console.print("[yellow]종료 명령 수신됨. 서버를 종료합니다.[/yellow]")
                      break
                 elif tool_name: # 도구 실행
@@ -605,7 +610,7 @@ def main(args: argparse.Namespace) -> None:
                 console.print(f"[red]{error_msg}[/red]")
                 response_json = state._format_mcp_response(error_msg)
 
-            # stdout으로 응답 출력
+            # stdout으로 응답 전송
             print(json.dumps(response_json, ensure_ascii=False))
             sys.stdout.flush()
 
