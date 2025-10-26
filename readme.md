@@ -33,14 +33,15 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
   
 
 -  🧰 **사용 가능한 도구 (Methods)**
-    ** 기본도구 ** 
+      
+    **기본도구** 
     | 도구명 (Method) | 레벨 | 스트레스 감소 (Range) | 설명 (Flavor Text 예시) |
     | :--- | :--- | :--- | :--- |
     | `take_a_break` | `basic` | `10 ~ 40` | ☕️ 그냥... 잠시 쉽니다. 왜요. |
     | `watch_netflix` | `basic` | `10 ~ 40` | 📺 '다음 에피소드 자동 재생'은 인류 최고의 발명입니다. |
     | `show_meme` | `basic` | `10 ~ 40` | 😹 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이 밈은 못 참지. |
    
-    ** 고급도구 **
+    **고급도구**
     | 도구명 (Method) | 레벨 | 스트레스 감소 (Range) | 설명 (Flavor Text 예시) |
     | :--- | :--- | :--- | :--- |
     | `deep_thinking` | `advanced` | `30 ~ 80` | 🤔 (심오한 생각에 잠긴 척) ...오늘 저녁 뭐 먹지? |
