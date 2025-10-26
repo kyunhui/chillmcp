@@ -39,4 +39,5 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
 python3 --version
 
 # 2. 필요한 패키지 설치
-pip install colorama rich
+pip install -r requirements.txt
+
