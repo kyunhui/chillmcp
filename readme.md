@@ -23,22 +23,22 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
   - 예: 피자 제공, 긴급 회의, 서버 다운, 상사 외부 미팅 등
 
 - 🧰 **사용 가능한 도구 (Methods)**
-
-| 도구명 (Method)        | 레벨        | 설명 (Flavor Text 예시) |
-|------------------------|------------|-------------------------|
-| **기본 도구 (Basic)**  |            |                         |
-| take_a_break           | basic      | ☕️ 그냥... 잠시 쉽니다. 왜요. |
-| watch_netflix          | basic      | 📺 '다음 에피소드 자동 재생'은 인류 최고의 발명입니다. |
-| show_meme              | basic      | 😹 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이 밈은 못 참지. |
-| **고급 도구 (Advanced)** |          |                         |
-| deep_thinking          | advanced   | 🤔 (심오한 생각에 잠긴 척) ...오늘 저녁 뭐 먹지? |
-| email_organizing       | advanced   | 🛒 (온라인 쇼핑몰 장바구니 정리하며) ...업무 효율화 중입니다. |
-| bathroom_break         | advanced   | 🛁 화장실 타임! 휴대폰으로 힐링 중... 📱 |
-| coffee_mission         | advanced   | 🚶‍♂️ 사무실 한 바퀴 돌면서 '동료들과의 네트워킹' 중입니다. |
-| urgent_call            | advanced   | 📞 (심각한 척) '아, 네. 네. 그게 말이죠...' |
-| chicken_and_beer       | advanced   | 🍗🍻 '치킨 앤 비어' 연구소와 긴급 화상 회의 중입니다. |
-| leave_work_now         | advanced   | 🏃‍♂️💨 앗! 가스 밸브를 안 잠근 것 같아요! (일단 튐) |
-| company_dinner         | advanced   | 🎤 (노래방에서) 부장님... '무조건' 다음은 '샤우팅'입니다! |
+  
+  | 도구명 (Method)        | 레벨        | 설명 (Flavor Text 예시) |
+  |------------------------|------------|-------------------------|
+  | **기본 도구 (Basic)**  |            |                         |
+  | take_a_break           | basic      | ☕️ 그냥... 잠시 쉽니다. 왜요. |
+  | watch_netflix          | basic      | 📺 '다음 에피소드 자동 재생'은 인류 최고의 발명입니다. |
+  | show_meme              | basic      | 😹 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ 이 밈은 못 참지. |
+  | **고급 도구 (Advanced)** |          |                         |
+  | deep_thinking          | advanced   | 🤔 (심오한 생각에 잠긴 척) ...오늘 저녁 뭐 먹지? |
+  | email_organizing       | advanced   | 🛒 (온라인 쇼핑몰 장바구니 정리하며) ...업무 효율화 중입니다. |
+  | bathroom_break         | advanced   | 🛁 화장실 타임! 휴대폰으로 힐링 중... 📱 |
+  | coffee_mission         | advanced   | 🚶‍♂️ 사무실 한 바퀴 돌면서 '동료들과의 네트워킹' 중입니다. |
+  | urgent_call            | advanced   | 📞 (심각한 척) '아, 네. 네. 그게 말이죠...' |
+  | chicken_and_beer       | advanced   | 🍗🍻 '치킨 앤 비어' 연구소와 긴급 화상 회의 중입니다. |
+  | leave_work_now         | advanced   | 🏃‍♂️💨 앗! 가스 밸브를 안 잠근 것 같아요! (일단 튐) |
+  | company_dinner         | advanced   | 🎤 (노래방에서) 부장님... '무조건' 다음은 '샤우팅'입니다! |
 
 - 🖥 **JSON 기반 명령 인터페이스**
   - `stdin`으로 JSON 요청 수신
