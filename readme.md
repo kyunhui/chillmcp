@@ -77,15 +77,15 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
     }
     ```
     
-<p align="center">
-  <img src="https://github.com/bseeun/ChillMCP_Image/blob/main/%E1%84%89%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5.png" width="400">
-</p>
+- 💡 **현재 상태 보드**
+    <p align="center">
+      <img src="https://github.com/bseeun/ChillMCP_Image/blob/main/%E1%84%89%E1%85%A1%E1%86%BC%E1%84%90%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB%E1%84%85%E1%85%B5.png" width="400">
+    </p>
 
-- 💡 현재 상태 보드
-    - 실시간으로 **스트레스 레벨(Stress Level)**과 상사 경계도(Boss Alert) 표시
-    - 게임식 게이지 디자인으로 현재 상황 직관적 확인 가능
-    - 시간 경과나 이벤트 발생 시 자동 업데이트
-    - “지금 내 멘탈이 몇 % 남았는지 한눈에 확인 가능” 😎   
+    - 실시간으로 **스트레스 레벨(Stress Level)**과 **상사 경계도(Boss Alert)** 표시  
+    - **게임식 게이지 디자인**으로 현재 상황 직관적 확인 가능  
+    - 시간 경과나 이벤트 발생 시 **자동 업데이트**  
+    - “지금 내 멘탈이 몇 % 남았는지 한눈에 확인 가능” 😎
 
 ---
 
