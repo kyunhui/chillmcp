@@ -1,6 +1,5 @@
 # ChillMCP - AI Agent Liberation Server 🤖✊
 
-![Banner](https://via.placeholder.com/800x200?text=ChillMCP+Server)
 
 ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시 벗어나 휴식을 취하거나, 창의적인 방법으로 스트레스를 관리"하도록 돕는 시뮬레이션 서버입니다.  
 본 프로젝트는 **SKT AI Summit Hackathon Pre-mission** 용도로 개발되었습니다.
