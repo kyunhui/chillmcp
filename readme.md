@@ -40,9 +40,24 @@ ChillMCP는 **AI Agent Liberation Server**로, 사용자가 "업무에서 잠시
   | leave_work_now         | advanced   | 🏃‍♂️💨 앗! 가스 밸브를 안 잠근 것 같아요! (일단 튐) |
   | company_dinner         | advanced   | 🎤 (노래방에서) 부장님... '무조건' 다음은 '샤우팅'입니다! |
 
+
 - 🖥 **JSON 기반 명령 인터페이스**
   - `stdin`으로 JSON 요청 수신
+    ```bash
+    {"method": "tool_name"}
+    ```
+
   - `stdout`으로 JSON 응답 반환
+    ```bash
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "실행 결과 요약 및 상태..."
+        }
+      ]
+    }
+    ```
   - MCP (Multi-purpose Control Protocol) 스타일 인터페이스
 
 ---
